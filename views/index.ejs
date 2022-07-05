@@ -1,0 +1,145 @@
+<% layout('../layout/home') %> 
+
+<div class="bg"></div>
+<main>
+    <article class="introduce">
+        <div class="intro-container">
+            <img src="img/logo.png" alt="logo">
+            <p class="quote">„Szczęście to jedyna rzecz, która się mnoży, jeśli się ją dzieli”</p>
+            <p class="quote-author">~Albert Schweitzer</p>
+            <div class="btn-learn-more">
+                <a href="#about">Dowiedz się więcej</a>
+            </div>
+        </div>
+    </article>
+    <article class="about" id="about">
+        <div class="about-container">
+            <h1>O nas</h1>
+            <p>Mauris in felis vehicula, suscipit purus vel, dignissim velit. Donec sit amet purus felis. Mauris eget purus imperdiet, vehicula nibh ac, finibus dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque ultrices vulputate velit, vitae euismod tellus lacinia vel. Nulla venenatis odio a leo mattis hendrerit. Quisque tincidunt tortor et faucibus iaculis. Fusce dapibus commodo neque, ut eleifend nisl ullamcorper id. Duis laoreet nisi vel auctor eleifend. Sed pulvinar volutpat tempus. Ut auctor volutpat viverra. Aenean id faucibus libero. Maecenas convallis mi nibh, quis laoreet lacus mattis facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar lobortis elit placerat vehicula. Integer quis purus luctus, laoreet purus vel, sodales leo. Nullam sit amet purus non turpis sollicitudin dictum non sed orci. Duis non tortor ut libero mattis rhoncus nec a tortor. Donec id velit sit amet urna gravida dictum. Duis eleifend ligula in sapien laoreet, ut pulvinar sapien condimentum. In id risus ac mauris auctor consequat et et velit. Mauris nec massa vitae ipsum tincidunt sollicitudin.</p>
+        </div>
+    </article>
+    <article class="news">
+        <div class="news-container">
+            <h1>Aktualności</h1>
+            <div class="posts">
+                <div class="post">
+                    <h2><%= posts[posts.length - 1].title %></h2>
+                    <p><%= posts[posts.length - 1].text %></p>
+                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                </div>
+                <div class="post">
+                    <h2><%= posts[posts.length - 2].title %></h2>
+                    <p><%= posts[posts.length - 2].text %></p>
+                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                </div>
+                <div class="post">
+                    <h2><%= posts[posts.length - 3].title %></h2>
+                    <p><%= posts[posts.length - 3].text %></p>
+                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                </div>
+                <div class="post">
+                    <h2><%= posts[posts.length - 3].title %></h2>
+                    <p><%= posts[posts.length - 3].text %></p>
+                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="therapy">
+        <div class="therapy-container">
+            <h1>Nasza działalność</h1>
+            <div class="therapy-types">
+                <div class="therapy-type">
+                    <div class="therapy-btn move-out">                    
+                        <img src="img/lapa.png" alt=""> 
+                    </div>    
+                    <div class="therapy-info undisplay">
+                        <h2>Dogoterapia</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, delectus. Ea dolorem voluptas omnis amet explicabo eveniet, pariatur reiciendis suscipit, repellat corrupti deserunt ducimus commodi quisquam nihil iure vero magni!</p>
+                        <a href="#" class="therapy-link">Zobacz więcej</a>
+                    </div>        
+                </div>
+                <div class="therapy-type">
+                    <div class="therapy-btn move-out">                    
+                        <img src="img/lapa.png" alt=""> 
+                    </div>    
+                    <div class="therapy-info undisplay">
+                        <h2>Dogoterapia</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi earum impedit tenetur qui. Possimus quaerat odit cumque aperiam, ullam natus itaque aliquid quasi porro quibusdam nam delectus! Obcaecati, dignissimos quisquam.</p>
+                        <a href="#" class="therapy-link">Zobacz więcej</a>
+                    </div>                      
+                </div>
+                <div class="therapy-type">
+                    <div class="therapy-btn move-out">                    
+                        <img src="img/lapa.png" alt=""> 
+                    </div>    
+                    <div class="therapy-info undisplay">
+                        <h2>Dogoterapia</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut veritatis vero, voluptas, modi eligendi laboriosam voluptatum tempore repellendus aspernatur consectetur facere similique, perferendis fugiat sint inventore minus? Repellat, quia fuga.</p>
+                        <a href="#" class="therapy-link">Zobacz więcej</a>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="team">
+        <div class="team-container">
+            <h1>Nasz team</h1>
+            <div class="team-persons">
+                <div class="person">
+                    <img src="img/person2.jpg" alt="">
+                    <div class="person-info">
+                        <h2>Albert</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure dolor fugit nemo vero. Beatae nesciunt quibusdam perspiciatis voluptatum iusto at iure, sed neque eos fugit aut consequatur odit perferendis.</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="img/person2.jpg" alt="">
+                    <div class="person-info">
+                        <h2>Albert</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure dolor fugit nemo vero. Beatae nesciunt quibusdam perspiciatis voluptatum iusto at iure, sed neque eos fugit aut consequatur odit perferendis.</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="img/person2.jpg" alt="">
+                    <div class="person-info">
+                        <h2>Albert</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure dolor fugit nemo vero. Beatae nesciunt quibusdam perspiciatis voluptatum iusto at iure, sed neque eos fugit aut consequatur odit perferendis.</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="img/person2.jpg" alt="">
+                    <div class="person-info">
+                        <h2>Albert</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure dolor fugit nemo vero. Beatae nesciunt quibusdam perspiciatis voluptatum iusto at iure, sed neque eos fugit aut consequatur odit perferendis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="contact">
+        <div class="contact-container">
+            <h1>Chcesz zapisać swoje dziecko?</h1>
+            <h2>Skontaktuj się z nami poprzez:</h2>
+            <div class="contact-types">
+                <div class="contact-type">
+                    <i class="icon-mail"></i>
+                    <h3>E-mail</h3>
+                    <p>Napisz do nas, a my się z tobą skontaktujemy w ciągu 24h</p>
+                </div>
+                <div class="contact-type">
+                    <i class="icon-phone"></i>
+                    <h3>Telefon</h3>
+                    <p>Zadzwoń do nas na numer +48293124211 w godzinach 8-15 pn-pt</p>
+                </div>
+                <form action="/sendEmail" method="post" id="input-msg">
+                    <input type="email" id="email-input" name="email" placeholder="Email" required>
+                    <input type="tel" id="phone-input" name="phoneNumber" placeholder="Nr. telefonu" required>
+                    <textarea name="msg" id="text-input" maxlength="300" placeholder="Tu możesz napisać dodatkowe informacje o dziecku. Maks 300 znaków (Opcjonalne)"></textarea>
+                    <button class="send-btn">Wyślij</button>
+                    <div class="counter">300</div>
+                </form>
+            </div>
+        </div>
+    </article>
+</main>
