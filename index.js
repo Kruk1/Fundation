@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override')
 const NewPost = require('./models/post')
 const sendMail = require('./jsbackend/mail')
+const port = process.env.PORT || 3000
 
 mongoose.connect('mongodb://localhost:27017/fundation', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -35,6 +36,6 @@ app.post('/sendEmail', (req, res) =>
     res.redirect('/')
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("APP IS LISTENING ON PORT 3000!")
 })
