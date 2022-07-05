@@ -8,7 +8,7 @@ const NewPost = require('./models/post')
 const sendMail = require('./jsbackend/mail')
 const port = process.env.PORT || 3000
 
-mongoose.connect('mongodb://localhost:27017/fundation', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://kruk:matejki88@atlascluster.ndp6p.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
