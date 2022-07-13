@@ -23,24 +23,28 @@
             <h1>Aktualności</h1>
             <div class="posts">
                 <div class="post">
-                    <h2><%= posts[posts.length - 1].title %></h2>
-                    <p><%= posts[posts.length - 1].text %></p>
-                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                    <img src="<%= posts[posts.length - 1].mainImg %>" alt="">
+                    <div class="post-info">
+                        <h2><%= posts[posts.length - 1].title %></h2>
+                        <p><%= posts[posts.length - 1].text %></p>
+                        <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                    </div>
                 </div>
                 <div class="post">
-                    <h2><%= posts[posts.length - 2].title %></h2>
-                    <p><%= posts[posts.length - 2].text %></p>
-                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                    <img src="<%= posts[posts.length - 1].mainImg %>" alt="">
+                    <div class="post-info">
+                        <h2><%= posts[posts.length - 2].title %></h2>
+                        <p><%= posts[posts.length - 2].text %></p>
+                        <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                    </div>
                 </div>
                 <div class="post">
-                    <h2><%= posts[posts.length - 3].title %></h2>
-                    <p><%= posts[posts.length - 3].text %></p>
-                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
-                </div>
-                <div class="post">
-                    <h2><%= posts[posts.length - 3].title %></h2>
-                    <p><%= posts[posts.length - 3].text %></p>
-                    <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                    <img src="<%= posts[posts.length - 1].mainImg %>" alt="">
+                    <div class="post-info">
+                        <h2><%= posts[posts.length - 3].title %></h2>
+                        <p><%= posts[posts.length - 3].text %></p>
+                        <a href="#" target="_blank" class="btn-post">Czytaj więcej</a>
+                    </div>
                 </div>
             </div>
         </div>

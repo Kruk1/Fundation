@@ -20,6 +20,11 @@ const postSchema = mongoose.Schema({
     {
         type: String,
         required: true
+    },
+    mainImg:
+    {
+        type: String,
+        default: 'img/tlo.jpg'
     }
 })
 
