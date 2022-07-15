@@ -686,8 +686,62 @@ nav
 
 footer
 {
-    height: 10vh;
     background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+footer img
+{
+    width: 250px;
+    margin-left: 50px;
+}
+
+footer h1
+{
+    font-size: var(--font-size-footer-list);
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+footer ul > li 
+{
+    text-align: center;
+    width: 100px;
+    margin: 0 25px;
+    line-height: 25px;
+}
+
+footer ul > li:first-child
+{
+    margin-top: 10px;
+}
+
+footer ul > li a
+{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-text-footer);
+}
+
+.sections
+{
+    display: flex;
+}
+
+.copyright
+{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-right: 50px;
 }
 
 .open
@@ -755,5 +809,7 @@ footer
     --title-person-font-size: 40px;
     --subtitle-contact: 25px;
     --icon-size: 40px;
-    --subtitles-icon-size: 20px
+    --subtitles-icon-size: 20px;
+    --font-size-footer-list: 20px;
+    --font-size-text-footer: 15px;
 }
