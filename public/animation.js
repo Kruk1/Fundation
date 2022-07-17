@@ -6,6 +6,7 @@ const menuIcon = document.querySelector('.menu')
 btns.forEach(btn => btn.addEventListener('click', open))
 messageBox.addEventListener('input', counting)
 menuIcon.addEventListener('click', navDisplay)
+document.body.addEventListener('click', hideNav)
 
 function open(e)
 {
@@ -47,6 +48,19 @@ function navDisplay(e)
         {
             this.nextElementSibling.children[i].style.animation = ``
         }
+    }
+    e.stopPropagation()
+}
+
+function hideNav(e)
+{
+    menuIcon.children[0].setAttribute('class', 'icon-menu')
+    menuIcon.nextElementSibling.classList.add('undisplay')
+    menuIcon.nextElementSibling.classList.remove('display')
+    menuIcon.nextElementSibling.classList.remove('bg-nav')
+    for(let i = 0; i < menuIcon.nextElementSibling.children.length; i++)
+    {
+        menuIcon.nextElementSibling.children[i].style.animation = ``
     }
     e.stopPropagation()
 }
