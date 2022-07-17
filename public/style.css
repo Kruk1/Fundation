@@ -259,7 +259,6 @@ nav
 
 .posts
 {
-    width: 1100px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -302,7 +301,6 @@ nav
     font-family: var(--font-text-family);
     line-height: 20px;
     margin: 10px 0 10px 0;
-    max-height: 120px;
 }
 
 .post a 
@@ -353,7 +351,6 @@ nav
 .therapy-types
 {
     width: 1000px;
-    height: 500px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -482,8 +479,6 @@ nav
 .team-persons
 {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -689,6 +684,7 @@ footer
     background-color: var(--main-color);
     display: flex;
     justify-content: space-between;
+    padding: 10px 0;
 }
 
 footer img
@@ -744,6 +740,14 @@ footer ul > li a
     margin-right: 50px;
 }
 
+.menu
+{
+    display: none;
+    margin-right: 15px;
+    color: white;
+    font-size: 25px;
+}
+
 .open
 {
     visibility: visible;
@@ -790,6 +794,11 @@ footer ul > li a
     100%{visibility: hidden; opacity: 0;}
 }
 
+@keyframes display-nav{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(0);}
+}
+
 :root
 {
     --main-color: rgba(153, 99, 0, 0.9);
@@ -797,6 +806,7 @@ footer ul > li a
     --hover: #995900;
     --hover-btn: #5a4300;
     --button-bg: #6B5400;
+    --button-bg-transparency: rgba(107, 84, 0, 0.9);
     --button-font-size: 14px;
     --title-section-font-size: 48px;
     --text-font-size: 24px;
@@ -812,4 +822,378 @@ footer ul > li a
     --subtitles-icon-size: 20px;
     --font-size-footer-list: 20px;
     --font-size-text-footer: 15px;
+}
+
+@media screen and (max-width: 1180px) {
+    .post
+    {
+        flex-direction: column;
+    }
+
+    .post img 
+    {
+        width: 600px;
+    }
+
+    .post h2
+    {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .about p 
+    {
+        width: 800px;
+    }
+
+    .therapy-types
+    {
+        width: 800px;
+        overflow-x: scroll;
+        justify-content: flex-start;
+    }
+
+    .therapy-type
+    {
+        flex-shrink: 0;
+        margin: 0 10px;
+    }
+
+    .team-persons
+    {
+        width: 800px;
+        justify-content: flex-start;
+        overflow-x: scroll;
+        padding-bottom: 10px;
+    }
+
+    .person
+    {
+        flex-shrink: 0;
+    }
+    
+    footer 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer img 
+    {
+        margin-left: 0;
+    }
+    
+    .copyright
+    {
+        margin-right: 0;
+        margin-top: 40px;
+        width: fit-content;
+    }
+
+    .sections
+    {
+        width: 600px;
+        justify-content: space-evenly;
+    }
+
+    header
+    {
+        justify-content: space-between;
+    }
+
+    header img 
+    {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .about p 
+    {
+        width: 600px;
+    }
+
+    .about
+    {
+        height: fit-content;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .post p 
+    {
+        width: 600px;
+        text-align: center;
+    }
+
+    .post-info
+    {
+        width: fit-content;
+    }
+
+    .therapy-types
+    {
+        width: 640px;
+    }
+
+    .team-persons
+    {
+        width: 640px;
+    }
+
+    nav 
+    {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-item
+    {
+        background-color: var(--button-bg-transparency);
+        width: 100%;
+        border-bottom: 1px dashed #5a4300;
+        transform: translateX(100%);
+    }
+
+    .nav-item:hover
+    {
+        background-color: var(--hover-btn);
+    }
+
+    .nav-item:last-child
+    {
+        border-bottom: 0;
+    }
+
+    .menu
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bg-nav
+    {
+        background-color: var(--button-bg-transparency);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .therapy-types
+    {
+        width: 320px;
+    }
+
+    .team-persons
+    {
+        width: 320px;
+    }
+
+    .post p 
+    {
+        width: 400px;
+        text-align: center;
+    }
+
+    .post img 
+    {
+        width: 400px;
+    }
+
+    .about p 
+    {
+        width: 400px;
+    }
+
+    .sections
+    {
+        width: fit-content;
+    }
+
+    .intro-container
+    {
+        width: 400px;
+    }
+
+    .intro-container img
+    {
+        width: 350px;
+    }
+
+    .quote
+    {
+        font-size: 28px;        
+        width: 400px;
+    }
+
+    .quote-author
+    {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .contact h1 
+    {
+        width: 350px;
+    }
+
+    .contact-types
+    {
+        margin-top: 25px;
+        width: 400px;
+    }
+
+    .contact-type
+    {
+        margin: 0 5px;
+    }
+
+    .contact p 
+    {
+        width: 190px;
+    }
+
+    #text-input
+    {
+        width: 380px;
+    }
+
+    #input-msg
+    {
+        width: 400px;
+    }
+
+    #email-input
+    {
+        width: 170px;
+    }
+
+    #phone-input
+    {
+        width: 170px;
+    }
+
+    footer ul > li 
+    {
+        margin: 0 10px;
+    }
+
+    .therapy h1
+    {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .contact-types
+    {
+        justify-content: center;
+    }
+
+    #input-msg
+    {
+        width: 300px;
+    }
+
+    #email-input
+    {
+        width: 220px;
+    }
+
+    #phone-input
+    {
+        width: 220px;
+        margin-top: 5px;
+    }
+
+    #text-input
+    {
+        width: 280px;
+    }
+
+    .contact p 
+    {
+        width: 150px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .contact h1 
+    {
+        width: 250px;
+    }
+
+    .contact-types
+    {
+        width: 320px;
+    }
+
+    .therapy h1
+    {
+        width: 300px;
+    }
+
+    .post p 
+    {
+        width: 300px;
+        word-wrap: break-word;
+        word-break: break-all;
+        text-align: justify;
+    }
+
+    .post img 
+    {
+        width: 300px;
+    }
+
+    .about p 
+    {
+        width: 300px;
+    }
+    .intro-container
+    {
+        width: 400px;
+    }
+
+    .intro-container img
+    {
+        width: 300px;
+    }
+
+    .quote
+    {
+        font-size: 21px;        
+        width: 300px;
+    }
+
+    .quote-author
+    {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .sections
+    {
+        flex-wrap: wrap;
+        max-width: 400px;
+        justify-content: center;
+    }
+
+    .links
+    {
+        margin-top: 10px;
+    }
+
+    :root
+    {
+        --title-section-font-size: 36px;
+        --subtitle-contact: 22px;
+    }
 }
