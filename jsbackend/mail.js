@@ -23,7 +23,7 @@ const mail = async (msg) =>
         html: `${msg.email} ${msg.phoneNumber} ${msg.msg}`
     })
 
-    console.log(info)
+    return info
 }
 
 exports.send = mail

@@ -63,6 +63,7 @@ header
     display: flex;
     justify-content: space-around;
     position: fixed;
+    top: 0;
     z-index: 30;
 }
 
@@ -87,9 +88,14 @@ nav
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     transition: .1s;
     padding: 0 10px;
+}
+
+.nav-item a
+{
+    color: white;
+    text-decoration: none;
 }
 
 .nav-item:hover
@@ -679,6 +685,39 @@ nav
     background-color: lightgray;
 }
 
+.failedInfo, .succesInfo
+{
+    width: 500px;
+    height: 40px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    position: relative;
+}
+
+.failedInfo
+{
+    border: 3px solid rgb(202, 8, 8);
+}
+
+.succesInfo
+{
+    border: 3px solid rgb(21, 189, 21);
+}
+
+.exit-btn
+{
+    position: absolute;
+    top: 2px;
+    right: 0;
+    font-size: var(--icon-size-pop);
+    cursor: pointer;
+}
+
 footer
 {
     background-color: var(--main-color);
@@ -740,6 +779,31 @@ footer ul > li a
     margin-right: 50px;
 }
 
+.error-box
+{
+    margin-top: 40px;
+    height: 95.9vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-box h1 
+{
+    font-size: 120px;
+    font-family: var(--font-text-family);
+    opacity: 1;
+    text-align: center;
+}
+
+.error-box p 
+{
+    font-size: 40px;
+    font-family: var(--font-text-family);
+    text-align: center;
+}
+
 .menu
 {
     display: none;
@@ -772,6 +836,11 @@ footer ul > li a
 .undisplay
 {
     animation: undisplay 0.2s forwards;
+}
+
+.undisplay-pop-up
+{
+    display: none;
 }
 
 @keyframes moveUp {
@@ -822,6 +891,7 @@ footer ul > li a
     --subtitles-icon-size: 20px;
     --font-size-footer-list: 20px;
     --font-size-text-footer: 15px;
+    --icon-size-pop: 18px;
 }
 
 @media screen and (max-width: 1180px) {
@@ -1087,6 +1157,12 @@ footer ul > li a
     .therapy h1
     {
         width: 400px;
+    }
+
+    .succesInfo, .failedInfo
+    {
+        width: 260px;
+        text-align: center;
     }
 }
 

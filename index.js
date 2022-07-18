@@ -26,14 +26,46 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', async (req, res) =>
 {
+    const error = req.query
+    console.log(error)
     const posts = await NewPost.find()
-    res.render('index', { posts })
+    res.render('index', { posts, error })
 })
 
-app.post('/sendEmail', (req, res) =>
+app.post('/sendEmail', async (req, res) =>
 {
-    sendMail.send(req.body).catch(e => console.log(e))
-    res.redirect('/')
+    let error = ''
+    await sendMail.send(req.body).catch(e => error = e)
+    if(error !== '')
+    {
+        res.redirect('/?sent=false')
+    }
+    else
+    {
+        res.redirect('/?sent=true')
+    }
+})
+
+app.use( async (err, req, res, next) => 
+{
+    const error = 
+    {
+        status: err.status = 500,
+        message: err.message = 'eeo'
+    }
+    const posts = await NewPost.find()
+    res.status(error.status).render('err', { error, posts })
+})
+
+app.use( async (req, res, next) => 
+{
+    const error =
+    {
+        status: 404,
+        message: 'Not Found'
+    }
+    const posts = await NewPost.find()
+    res.status(error.status).render('err', { error, posts })
 })
 
 app.listen(port, () => {

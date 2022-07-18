@@ -2,11 +2,19 @@ const btns = document.querySelectorAll('.therapy-btn')
 const counter = document.querySelector('.counter')
 const messageBox = document.querySelector('#text-input')
 const menuIcon = document.querySelector('.menu')
+const failedErr = document.querySelector('.failedInfo')
+const succesMail = document.querySelector('.succesInfo')
+const exitBtn = document.querySelector('.exit-btn')
 
 btns.forEach(btn => btn.addEventListener('click', open))
 messageBox.addEventListener('input', counting)
 menuIcon.addEventListener('click', navDisplay)
 document.body.addEventListener('click', hideNav)
+if(failedErr || succesMail)
+{
+    window.addEventListener('load', scrollContact)
+    exitBtn.addEventListener('click', undisplayPopUp)
+}
 
 function open(e)
 {
@@ -54,13 +62,27 @@ function navDisplay(e)
 
 function hideNav(e)
 {
-    menuIcon.children[0].setAttribute('class', 'icon-menu')
-    menuIcon.nextElementSibling.classList.add('undisplay')
-    menuIcon.nextElementSibling.classList.remove('display')
-    menuIcon.nextElementSibling.classList.remove('bg-nav')
-    for(let i = 0; i < menuIcon.nextElementSibling.children.length; i++)
+    if(window.innerWidth <= 840)
     {
-        menuIcon.nextElementSibling.children[i].style.animation = ``
+        menuIcon.children[0].setAttribute('class', 'icon-menu')
+        menuIcon.nextElementSibling.classList.add('undisplay')
+        menuIcon.nextElementSibling.classList.remove('display')
+        menuIcon.nextElementSibling.classList.remove('bg-nav')
+        for(let i = 0; i < menuIcon.nextElementSibling.children.length; i++)
+        {
+            menuIcon.nextElementSibling.children[i].style.animation = ``
+        }
     }
     e.stopPropagation()
+}
+
+function scrollContact()
+{
+    const contactSection = document.querySelector('.contact')
+    window.scrollTo(0, contactSection.offsetTop)
+}
+
+function undisplayPopUp()
+{
+    this.parentElement.classList.add('undisplay-pop-up')
 }

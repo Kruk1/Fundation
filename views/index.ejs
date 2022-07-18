@@ -115,6 +115,18 @@
         </div>
     </article>
     <article class="contact">
+        <% if(error.sent === 'true') {%>
+            <div class="succesInfo">
+                Wiadomość została wysłana pomyślnie
+                <div class="exit-btn"><i class="icon-cancel"></i></div>     
+            </div>
+        <% } %>  
+        <% if(error.sent === 'false') {%>
+            <div class="failedInfo">
+                Wiadomość nie została wysłana! Spróbuj ponownie
+                <div class="exit-btn"><i class="icon-cancel"></i></div>
+            </div>
+        <% } %>  
         <div class="contact-container">
             <h1>Chcesz zapisać swoje dziecko?</h1>
             <h2>Skontaktuj się z nami poprzez:</h2>
