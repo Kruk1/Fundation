@@ -27,7 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.get('/', async (req, res) =>
 {
     const error = req.query
-    console.log(error)
     const posts = await NewPost.find()
     res.render('index', { posts, error })
 })

@@ -5,11 +5,15 @@ const menuIcon = document.querySelector('.menu')
 const failedErr = document.querySelector('.failedInfo')
 const succesMail = document.querySelector('.succesInfo')
 const exitBtn = document.querySelector('.exit-btn')
+const navHeight = document.querySelector('nav').offsetHeight
+
+document.documentElement.style.setProperty('--scroll-padding', navHeight - 1 + 'px')
 
 btns.forEach(btn => btn.addEventListener('click', open))
 messageBox.addEventListener('input', counting)
 menuIcon.addEventListener('click', navDisplay)
 document.body.addEventListener('click', hideNav)
+window.addEventListener('scroll', smoothSections)
 if(failedErr || succesMail)
 {
     window.addEventListener('load', scrollContact)
@@ -85,4 +89,23 @@ function scrollContact()
 function undisplayPopUp()
 {
     this.parentElement.classList.add('undisplay-pop-up')
+}
+
+function smoothSections(e)
+{
+    const about = document.querySelector('.about-container')
+    const news = document.querySelector('.news-container')
+    const therapy = document.querySelector('.therapy-container')
+    const team = document.querySelector('.team-container')
+    const contact = document.querySelector('.contact-container')
+    if(about.parentElement.offsetTop - window.innerHeight <= window.scrollY)
+        about.classList.add('smooth-section')
+    if(news.parentElement.offsetTop - window.innerHeight <= window.scrollY)
+        news.classList.add('smooth-section')
+    if(therapy.parentElement.offsetTop - window.innerHeight <= window.scrollY)
+        therapy.classList.add('smooth-section')
+    if(team.parentElement.offsetTop - window.innerHeight <= window.scrollY)
+        team.classList.add('smooth-section')
+    if(contact.parentElement.offsetTop - window.innerHeight <= window.scrollY)
+        contact.classList.add('smooth-section')
 }

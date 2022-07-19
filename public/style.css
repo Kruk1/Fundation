@@ -8,6 +8,7 @@
 html
 {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -202,11 +203,11 @@ nav
 
 .about
 {
-    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 100px 0;
 }
 
 .about-container
@@ -214,6 +215,9 @@ nav
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
 }
 
 .about h1
@@ -261,6 +265,9 @@ nav
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
 }
 
 .posts
@@ -352,6 +359,9 @@ nav
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
 }
 
 .therapy-types
@@ -480,6 +490,9 @@ nav
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
 }
 
 .team-persons
@@ -558,6 +571,8 @@ nav
     display: flex;
     flex-direction: column;
     align-items: center;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .contact h1
@@ -828,6 +843,11 @@ footer ul > li a
     animation: moveOut 0.5s forwards;
 }
 
+.smooth-section
+{
+    animation: smooth-section 1s forwards;
+}
+
 .display
 {
     animation: display 0.5s forwards;
@@ -866,6 +886,11 @@ footer ul > li a
 @keyframes display-nav{
     0%{transform: translateX(100%);}
     100%{transform: translateX(0);}
+}
+
+@keyframes smooth-section {
+    0%{transform: translateY(100%); visibility: hidden; opacity: 0;}
+    100%{transform: translateY(0); visibility: visible; opacity: 1;}
 }
 
 :root
@@ -1025,7 +1050,6 @@ footer ul > li a
 
     .nav-item
     {
-        background-color: var(--button-bg-transparency);
         width: 100%;
         border-bottom: 1px dashed #5a4300;
         transform: translateX(100%);
