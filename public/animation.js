@@ -6,6 +6,7 @@ const failedErr = document.querySelector('.failedInfo')
 const succesMail = document.querySelector('.succesInfo')
 const exitBtn = document.querySelector('.exit-btn')
 const navHeight = document.querySelector('nav').offsetHeight
+const mobileSwapIcons = document.querySelectorAll('.move-animation')
 
 document.documentElement.style.setProperty('--scroll-padding', navHeight - 1 + 'px')
 
@@ -14,6 +15,7 @@ messageBox.addEventListener('input', counting)
 menuIcon.addEventListener('click', navDisplay)
 document.body.addEventListener('click', hideNav)
 window.addEventListener('scroll', smoothSections)
+mobileSwapIcons.forEach(icon => icon.parentElement.addEventListener('scroll', undisplayMobileSwap))
 if(failedErr || succesMail)
 {
     window.addEventListener('load', scrollContact)
@@ -108,4 +110,9 @@ function smoothSections(e)
         team.classList.add('smooth-section')
     if(contact.parentElement.offsetTop - window.innerHeight <= window.scrollY)
         contact.classList.add('smooth-section')
+}
+
+function undisplayMobileSwap(e)
+{
+    this.children[0].classList.add('undisplay')
 }
