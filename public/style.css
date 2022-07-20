@@ -171,16 +171,13 @@ nav
 
 .btn-learn-more
 {
-    position: absolute;
-    top: 150%;
-    left: 50%;
     width: 150px;
     height: 50px;
     background-color: var(--button-bg);
     color: white;
-    transform: translateX(-50%);
     font-size: var(--button-font-size);
     transition: .1s;
+    margin-top: 50px;
 }
 
 .btn-learn-more a

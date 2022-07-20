@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override')
 const NewPost = require('./models/post')
 const sendMail = require('./jsbackend/mail')
+const validation = require('./jsbackend/validation')
 const port = process.env.PORT || 3000
 
 mongoose.connect('mongodb+srv://kruk:matejki88@atlascluster.ndp6p.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -31,7 +32,7 @@ app.get('/', async (req, res) =>
     res.render('index', { posts, error })
 })
 
-app.post('/sendEmail', async (req, res) =>
+app.post('/sendEmail', validation.validPhone, async (req, res) =>
 {
     let error = ''
     await sendMail.send(req.body).catch(e => error = e)
@@ -45,7 +46,7 @@ app.post('/sendEmail', async (req, res) =>
     }
 })
 
-app.use( async (err, req, res, next) => 
+app.use(async (err, req, res, next) => 
 {
     const error = 
     {
@@ -56,7 +57,7 @@ app.use( async (err, req, res, next) =>
     res.status(error.status).render('err', { error, posts })
 })
 
-app.use( async (req, res, next) => 
+app.use(async (req, res, next) => 
 {
     const error =
     {
