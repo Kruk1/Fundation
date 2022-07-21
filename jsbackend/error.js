@@ -1,6 +1,6 @@
 class MyError extends Error
 {
-    constructor(status = 500, message = 'Something wrongs'){
+    constructor(status = 500, message = 'Something gone wrong'){
         super()
         this.message = message
         this.status = status
